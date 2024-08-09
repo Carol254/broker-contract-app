@@ -1,0 +1,25 @@
+<ion-content [fullscreen]="true">
+  <div class="main">
+    <div #content ngClass="visibility" class="content">
+      
+      <h2 style="font-weight: bold;">Phoenix Broker App</h2>
+      <form>
+        <ion-item>
+          <ion-input style="--border-focused: #fff !important;" label="UserName" type="text" placeholder="" ></ion-input>
+          <ion-icon   style="color: rgb(5, 159, 248);" slot="start" name="person" aria-hidden="true"></ion-icon>
+        </ion-item>
+            
+        <ion-item>
+          <ion-input label="Password" type="password" placeholder="" ></ion-input> 
+          <ion-icon  style="color: rgb(5, 159, 248);" slot="start" name="lock-closed" aria-hidden="true"></ion-icon>     
+        </ion-item>
+  
+        <button  type="submit">LOGIN</button>
+      </form>
+  
+      <h6>No Account Yet?</h6>
+      <h5>REGISTER FOR FREE</h5>
+    </div>
+
+  </div>
+</ion-content>
