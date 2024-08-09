@@ -1,0 +1,7 @@
+{
+  "name": "brokerDemo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
