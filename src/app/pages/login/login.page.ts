@@ -1,8 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormsModule,ReactiveFormsModule,FormGroup } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar,IonButton,IonLoading, IonItem,IonList ,IonInput,IonIcon} from '@ionic/angular/standalone';
 import { LoadingController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,11 @@ import { LoadingController } from '@ionic/angular';
 export class LoginPage implements OnInit {
 
   @ViewChild('content') content!:ElementRef;
+
+  brokerForm = new FormGroup({
+    userName:new FormControl(),
+    password: new FormControl()
+  })
 
   constructor(private loadingCtrl: LoadingController) { }
 
@@ -32,6 +38,10 @@ export class LoginPage implements OnInit {
   await loading.onDidDismiss();
 
   this.content.nativeElement.style.visibility = 'visible';
+ }
+
+ onSubmit(){
+  console.log(this.brokerForm.value);
  }
 
 }
