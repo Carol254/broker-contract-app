@@ -6,16 +6,24 @@
 
       <form [formGroup]="brokerForm" (ngSubmit)="onSubmit()">
         <ion-item>
-          <ion-input style="--border-focused: #fff !important;" label="UserName" type="text" placeholder="" formControlName="UserName" ></ion-input>
+          <ion-input style="--border-focused: #fff !important;" label="UserName" type="text"  formControlName="userName" id="userName"  class="form-control"></ion-input>
           <ion-icon   style="color: rgb(5, 159, 248);" slot="start" name="person" aria-hidden="true"></ion-icon>
         </ion-item>
+        <div *ngIf="userName?.invalid && (brokerForm.touched || brokerForm.dirty)" class="validation">
+          Name required
+        </div>
             
         <ion-item>
           <ion-input label="Password" type="password" placeholder="" formControlName="password" ></ion-input> 
           <ion-icon  style="color: rgb(5, 159, 248);" slot="start" name="lock-closed" aria-hidden="true"></ion-icon>     
         </ion-item>
+
+        <div *ngIf="password?.invalid && (brokerForm.touched || brokerForm.dirty)" class="validation">
+          password required
+        </div>
   
-        <button  type="submit">LOGIN</button>
+        <button  type="submit" [disabled]="brokerForm.invalid">LOGIN</button>
+        <div #bForm style="visibility: hidden;" class="validation"> please fill the form</div>
       </form>
   
       <h6>No Account Yet?</h6>
